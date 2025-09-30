@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>高翊展 — 自我介紹</title>
+  <style>
+    :root{
+      --bg:#f0f4ff; --card:#ffffff; --accent:#1e40af; --muted:#6b7280;
+      --radius:18px; --glass: rgba(255,255,255,0.7);
+    }
+    *{box-sizing:border-box}
+    body{font-family: 'Noto Sans TC','Microsoft JhengHei',sans-serif;
+      background:linear-gradient(160deg,var(--bg),#e0e7ff);
+      margin:0;color:#111827;overflow:hidden;position:relative}
+    .wrap{max-width:950px;margin:40px auto;padding:24px;position:relative;z-index:2}
+    .card{background:var(--card);border-radius:var(--radius);
+      box-shadow:0 8px 30px rgba(0,0,0,0.1);
+      overflow:hidden;display:grid;grid-template-columns:280px 1fr;
+      animation:fadeIn 1.2s ease}
+    @keyframes fadeIn{from{opacity:0;transform:translateY(20px)} to{opacity:1;transform:translateY(0)}}
+    .sidebar{background:linear-gradient(180deg,var(--glass), rgba(255,255,255,0.95));padding:26px;text-align:center}
+    .avatar{width:170px;height:170px;border-radius:50%;overflow:hidden;margin:0 auto 18px;border:4px solid #dbeafe;box-shadow:0 4px 12px rgba(0,0,0,0.08);animation:breath 4s ease-in-out infinite}
+    @keyframes breath{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+    .avatar svg{width:100%;height:100%}
+    h1{font-size:24px;margin:8px 0 4px;color:var(--accent)}
+    p.role{color:#374151;margin:0 0 14px;font-weight:600;font-size:15px}
+    .contact{font-size:14px;color:var(--muted);line-height:1.6}
+    .section{padding:26px}
+    .section h2{font-size:18px;margin:0 0 12px;color:var(--accent);border-left:4px solid var(--accent);padding-left:8px;position:relative;overflow:hidden}
+    .section h2::after{content:"";position:absolute;bottom:0;left:-30%;width:30%;height:2px;background:linear-gradient(90deg,transparent,#60a5fa,transparent);animation:shine 3s linear infinite}
+    @keyframes shine{0%{left:-30%}100%{left:100%}}
+    .bio{line-height:1.7;color:#1f2937;font-size:15px;animation:typing 3s steps(40,end)}
+    @keyframes typing{from{width:0}to{width:100%}}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .tag{background:#eff6ff;border-radius:999px;padding:6px 12px;font-size:13px;color:var(--accent);border:1px solid rgba(30,64,175,0.15);font-weight:500;animation:float 4s ease-in-out infinite}
+    @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+    .list{margin:0;padding:0;list-style:none}
+    .list li{padding:8px 0;border-bottom:1px dashed #e5e7eb;font-size:14px;line-height:1.6;transition:0.3s}
+    .list li:hover{background:#f9fafb;transform:scale(1.02)}
+    .btn{display:inline-block;margin-top:16px;padding:10px 18px;border-radius:12px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 0 8px rgba(30,64,175,0.4)}
+    .btn:hover{background:#1d4ed8;box-shadow:0 0 16px rgba(30,64,175,0.7)}
+    @media (max-width:760px){.card{grid-template-columns:1fr} .sidebar{order:2}}
+    /* 背景粒子 */
+    canvas#bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0}
+    /* 滑鼠光暈 */
+    .cursor-glow{position:fixed;width:200px;height:200px;border-radius:50%;background:radial-gradient(circle,rgba(96,165,250,0.25),transparent);pointer-events:none;mix-blend-mode:screen;transform:translate(-50%,-50%);z-index:1}
+  </style>
+</head>
+<body>
+  <canvas id="bg"></canvas>
+  <div class="cursor-glow"></div>
+  <div class="wrap">
+    <div class="card">
+      <aside class="sidebar">
+        <div class="avatar">
+  <img src="552882642_834946335862776_1411892694518244381_n.png" 
+       alt="高翊展的照片" 
+       style="width:100%;height:100%;object-fit:cover;">
+</div>
+        <h1 id="name">高翊展</h1>
+        <p class="role">中原大學學生</p>
+        <p class="contact">📧 <span id="email">austinkao904@gmail.com</span><br>📍 <span id="location">桃園市，台灣</span></p>
+      </aside>
+
+      <main class="section">
+        <h2>個人簡介</h2>
+        <p class="bio" id="intro">您好！我是 <strong>高翊展</strong>，目前就讀於中原大學。我熱愛學習與挑戰，興趣廣泛，從音樂、足球到文化研究都有涉略。我的特長是快速吸收新知並且善於跨領域溝通，樂於在樂團中擔任橋樑角色(來，開始溝通吧)，拯救分崩離析的CRYCHIC(失敗) 和MYGO!!!!!(成功)。</p>
+
+        <h2>技能與專長</h2>
+        <div class="tags">
+          <span class="tag">中文寫作：學測作文 17.5/18.5</span>
+          <span class="tag">英文能力：TOEIC 840</span>
+          <span class="tag">樂器：演奏春日影</span>
+          <span class="tag">其他：美食品鑑(意味深</span>
+        </div>
+
+        <h2>學經歷</h2>
+        <ul class="list">
+          <li><strong>2022–2025</strong> 中大壢中 — 完成高中教育</li>
+          <li><strong>2023</strong>  實習：偶像練習生（唱/跳/RAP/籃球）</li>
+        </ul>
+          <li><strong>2023</strong>  海森堡國際股份有限公司實習：於美國新墨西哥州阿布奎基高中擔任化學教師華特·懷特的助手，專門研究的甲基苯丙胺(Meth)的純度以及產量關係，最終成功提升產品純度(高達 99.1%)</li>
+        </ul>
+
+        <h2>個人專案 / 成就</h2>
+        <ul class="list">
+          <li>看了三場演唱會</li>
+          <li>持續進修英語，達到 TOEIC 840 分，培養國際溝通能力</li>
+        </ul>
+
+        <h2>我在聽什麼?</h2>
+        <p class="bio"><strong>King Gnu</strong> (4/6,4/7北流參戰)</p><strong>藤井風</strong>(11/16小巨蛋參戰)</p> <strong>米津玄師</strong>(沒抽到票)</p> <strong>Ado</strong>(沒抽到票*2)</p> <strong>Oasis</strong>(經費不足)</p> <strong>GunsNRoses</strong>(經費不足)</p> <strong>トゲナシトゲアリ</strong>(沒抽到票*3)</p> <strong>Yoasobi</strong>(沒抽到票*4)</p>
+
+        <a class="btn" href="#">下載履歷（PDF）</a>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    // 背景粒子效果
+    const canvas=document.getElementById("bg"),ctx=canvas.getContext("2d");
+    canvas.width=innerWidth;canvas.height=innerHeight;
+    let particles=[];
+    for(let i=0;i<80;i++){particles.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,r:Math.random()*2+1,dx:(Math.random()-0.5)*0.5,dy:(Math.random()-0.5)*0.5});}
+    function animate(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      ctx.fillStyle="rgba(147,197,253,0.7)";
+      particles.forEach(p=>{
+        ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+        p.x+=p.dx;p.y+=p.dy;
+        if(p.x<0||p.x>canvas.width)p.dx*=-1;
+        if(p.y<0||p.y>canvas.height)p.dy*=-1;
+      });
+      requestAnimationFrame(animate);
+    }
+    animate();
+
+    // 滑鼠光暈
+    const glow=document.querySelector(".cursor-glow");
+    document.addEventListener("mousemove",e=>{
+      glow.style.left=e.clientX+"px";
+      glow.style.top=e.clientY+"px";
+    });
+  </script>
+</body>
+</html>
